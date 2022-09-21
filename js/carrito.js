@@ -93,7 +93,7 @@ const eliminarProductoBtn = document.querySelectorAll(".btnDelete")
 //Defino la función de respuesta al hacer click en el botón de eliminar producto
 function eliminarProductoClick(event){
     const button = event.target
-    const prodAEliminar = button.closest(".prodAgregado").remove()
+    button.closest(".prodAgregado").remove()
     actualizarTotalCarrito()
 }
 

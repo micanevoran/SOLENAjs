@@ -108,28 +108,44 @@
             border-bottom: solid map-get($map:$palette, $key:'darkBlue') 0.07em;
         }
         h4{
-            font-size: 1.2rem;
+            font-size: 0.9rem;
+            @include medias (tablet){
+                font-size: 1.2rem;
+            }
         }
         .prodAgregado{
             border-bottom: 0.05em solid rgb(82, 182, 154);
             font-size: 1rem;
             .prodAgregadoImgNombre{
-                @include display-flex(row, start, center);
+                @include display-flex(column, center, start);
                 p{
+                    font-size: 0.8rem;
                     font-weight: $textBold;
                     height: 100%;
-                    padding: 1vh 0;
+                    padding-bottom: 0.5vh;
+                    @include medias(tablet){
+                        font-size: 1rem;
+                    }
                 } 
                 img{
+                    padding-top: 1vh;
                     width: 10vw;
                     max-width: 100px;
                 }
+                @include medias(tablet){
+                    @include display-flex(row, start, center);
+                    padding: 1vh 0;
+                }
+                
             }
             .prodAgregadoPrecio{
                 @include display-flex(row, center, center);
-                font-size: 1.2rem;
+                font-size: 0.8rem;
                 height: 100%;
-                padding: 1vh 0;
+                padding: 0.7vh 0;
+                }
+                @include medias(tablet){
+                    font-size: 1.2rem; 
                 }
             .prodAgregadoCantidad{
                 @include display-flex(row, center, center);
@@ -137,8 +153,12 @@
                 height: 100%;
                 padding: 1vh 0;
                 .prodAgregadoCantidadInput{
-                    width: 5vw;
+                    width: 10vw;
                     margin-right: 0.5vw;
+                    @include medias (tablet){
+                        width: 5vw;
+                        margin-right: 0.5vw;
+                    }
                 }
                 .btnDelete{
                     background-color: rgb(255, 0, 0);

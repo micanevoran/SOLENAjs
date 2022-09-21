@@ -6,11 +6,13 @@ const TODOS = document.querySelectorAll(".products__figure")
 
 //Creo una clase constructora para mis productos//
 class crearProducto{
-    constructor(img, nombre, nombreLowerCase, precio){
+    constructor(img, nombre, nombreLowerCase, precio, linea, tipo){
         this.img = img
         this.nombre = nombre
         this.nombreLowerCase = nombreLowerCase
         this.precio = precio
+        this.linea = linea
+        this.tipo = tipo
     }
 }
 
@@ -23,18 +25,60 @@ function obtenerDatosProd(prod){
     const prodNombre = prod.querySelector(".prod-nombre").textContent
     const prodNombreLowerCase = prodNombre.toLowerCase()
     const prodPrecio = prod.querySelector(".prod-precio").textContent
-    const productoNuevo = new crearProducto(prodImg, prodNombre, prodNombreLowerCase, prodPrecio)
+    const prodLinea = extraerLinea(prod.classList[1])
+    const prodTipo = extraerTipo(prod.classList[2])
+    const productoNuevo = new crearProducto(prodImg, prodNombre, prodNombreLowerCase, prodPrecio, prodLinea, prodTipo)
     prodArray.push(productoNuevo)
 }
 
+//Defino una función para extraer la línea de producto a la que corresponde el producto
+function extraerLinea (elemento){
+    switch(elemento){
+        case "linea-fotovoltaica":
+            return "linea-fotovoltaica"
+            break
+        case "linea-termica":
+            return "linea-termica"
+            break
+        default:
+            return "no determinado"
+            break
+    }
+    return
+}
+
+//Defino una función para extraer el tipo de producto al que corresponde el producto
+function extraerTipo (elemento){
+    switch(elemento){
+        case "tipo-panel":
+            return "tipo-panel"
+            break
+        case "tipo-termot":
+            return "tipo-termot"
+            break
+        case "tipo-inv":
+            return "tipo-inv"
+            break
+        case "tipo-bat":
+            return "tipo-bat"
+            break
+        case "tipo-acc":
+            return "tipo-acc"
+            break
+        default:
+            return "no determinado"
+            break
+    }
+    return
+}
 //Defino una función para crear las Figures según el criterio buscado
-function crearFigure(prodFiltradoImg, prodFiltradoNombre, prodFiltradoPrecio){
+function crearFigure(prodImg, prodNombre, prodPrecio, prodLinea, prodTipo){
     const prodFigure = document.createElement("figure")
-    prodFigure.className = "products__figure"
+    prodFigure.className = `products__figure ${prodLinea} ${prodTipo}`
     const figureContent = `
-        <img src=${prodFiltradoImg} class="prod-img">
-        <figcaption class="prod-nombre">${prodFiltradoNombre}</figcaption>
-        <p class="prod-precio">${prodFiltradoPrecio}</p>
+        <img src=${prodImg} class="prod-img">
+        <figcaption class="prod-nombre">${prodNombre}</figcaption>
+        <p class="prod-precio">${prodPrecio}</p>
         <button class="btn-carrito">
             Agregar al Carrito 
             <img src="img/icons/agregarCarrito.png" alt="Agregar al Carrito de compras" class="btn-img">
@@ -66,7 +110,7 @@ function buscarProducto(event){
     }
     else{
         prodContainer.innerHTML = ``
-        filtrados.forEach(e=>crearFigure(e.img, e.nombre, e.precio))
+        filtrados.forEach(e=>crearFigure(e.img, e.nombre, e.precio, e.linea, e.tipo))
     }
 }
 

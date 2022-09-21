@@ -541,7 +541,12 @@ section .clients__div .clients__logos:hover {
   border-bottom: solid rgb(2, 36, 64) 0.07em;
 }
 .structure__products #carritoCompras h4 {
-  font-size: 1.2rem;
+  font-size: 0.9rem;
+}
+@media (min-width: 768px) {
+  .structure__products #carritoCompras h4 {
+    font-size: 1.2rem;
+  }
 }
 .structure__products #carritoCompras .prodAgregado {
   border-bottom: 0.05em solid rgb(82, 182, 154);
@@ -549,27 +554,48 @@ section .clients__div .clients__logos:hover {
 }
 .structure__products #carritoCompras .prodAgregado .prodAgregadoImgNombre {
   display: flex;
-  flex-direction: row;
-  justify-content: start;
-  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  align-items: start;
 }
 .structure__products #carritoCompras .prodAgregado .prodAgregadoImgNombre p {
+  font-size: 0.8rem;
   font-weight: 700;
   height: 100%;
-  padding: 1vh 0;
+  padding-bottom: 0.5vh;
+}
+@media (min-width: 768px) {
+  .structure__products #carritoCompras .prodAgregado .prodAgregadoImgNombre p {
+    font-size: 1rem;
+  }
 }
 .structure__products #carritoCompras .prodAgregado .prodAgregadoImgNombre img {
+  padding-top: 1vh;
   width: 10vw;
   max-width: 100px;
+}
+@media (min-width: 768px) {
+  .structure__products #carritoCompras .prodAgregado .prodAgregadoImgNombre {
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+    align-items: center;
+    padding: 1vh 0;
+  }
 }
 .structure__products #carritoCompras .prodAgregado .prodAgregadoPrecio {
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  font-size: 1.2rem;
+  font-size: 0.8rem;
   height: 100%;
-  padding: 1vh 0;
+  padding: 0.7vh 0;
+}
+@media (min-width: 768px) {
+  .structure__products #carritoCompras .prodAgregado {
+    font-size: 1.2rem;
+  }
 }
 .structure__products #carritoCompras .prodAgregado .prodAgregadoCantidad {
   display: flex;
@@ -581,8 +607,14 @@ section .clients__div .clients__logos:hover {
   padding: 1vh 0;
 }
 .structure__products #carritoCompras .prodAgregado .prodAgregadoCantidad .prodAgregadoCantidadInput {
-  width: 5vw;
+  width: 10vw;
   margin-right: 0.5vw;
+}
+@media (min-width: 768px) {
+  .structure__products #carritoCompras .prodAgregado .prodAgregadoCantidad .prodAgregadoCantidadInput {
+    width: 5vw;
+    margin-right: 0.5vw;
+  }
 }
 .structure__products #carritoCompras .prodAgregado .prodAgregadoCantidad .btnDelete {
   background-color: rgb(255, 0, 0);
