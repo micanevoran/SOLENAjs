@@ -4,7 +4,8 @@
     grid-template-rows: auto;
     grid-template-areas:
     "filters"
-    "products";
+    "products"
+    "carrito";
     #ProdFilters{
         grid-area: filters;
         font-family: $mainFont;
@@ -27,7 +28,7 @@
             border: map-get($map:$palette, $key:'aqua') solid 0.1em;
             border-radius: 3%;
             @include display-flex(column, center, center);
-            img{
+            .prod-img{
                 width: 50vw;
                 max-width: 300px;
                 &:hover{
@@ -58,6 +59,19 @@
                 width: 30%;
                 margin-right: 1.5vw;
             }
+            .btn-carrito  {
+                @extend .button;
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                justify-content: center;
+                margin-right: 0.5vw;
+                img{
+                    width: 2.5vw;
+                    padding: 0;
+                    margin-left: 0.5vw;
+                }
+            } 
         }
         .emptySpace{
             width: 90%;
@@ -83,9 +97,85 @@
             justify-content: center;
         }
     }
+    #carritoCompras{
+        grid-area: carrito;
+        h3{
+            text-align: start;
+            font-size: 1.5rem;
+            font-weight: $textBold;
+            margin: 5vh 0;
+            padding: 1.5vh 1vw;
+            border-bottom: solid map-get($map:$palette, $key:'darkBlue') 0.07em;
+        }
+        h4{
+            font-size: 1.2rem;
+        }
+        .prodAgregado{
+            border-bottom: 0.05em solid rgb(82, 182, 154);
+            font-size: 1rem;
+            .prodAgregadoImgNombre{
+                @include display-flex(row, start, center);
+                p{
+                    font-weight: $textBold;
+                    height: 100%;
+                    padding: 1vh 0;
+                } 
+                img{
+                    width: 10vw;
+                    max-width: 100px;
+                }
+            }
+            .prodAgregadoPrecio{
+                @include display-flex(row, center, center);
+                font-size: 1.2rem;
+                height: 100%;
+                padding: 1vh 0;
+                }
+            .prodAgregadoCantidad{
+                @include display-flex(row, center, center);
+                justify-content: center;
+                height: 100%;
+                padding: 1vh 0;
+                .prodAgregadoCantidadInput{
+                    width: 5vw;
+                    margin-right: 0.5vw;
+                }
+                .btnDelete{
+                    background-color: rgb(255, 0, 0);
+                    border-radius: 3px;
+                }
+            }
+        }
+        .carritoTotal{
+            @include display-flex(row, center, center);
+            border-top: solid map-get($map:$palette, $key:'darkBlue') 0.07em;
+            h5{
+                margin-top: 3vh;
+                font-size: 1.3rem;
+                font-weight: 700;
+            }
+            h6{
+                font-size: 1.3rem;
+                margin-left: 1vw;
+                margin-top: 3vh;
+                border: solid 0.1em rgb(82, 182, 154);
+                border-radius: 5px;
+                padding: 0.7vh 0.7vw;
+            }
+            .comprarBtn{
+                @extend .button;
+                font-size: 1.2em;
+                padding: 0.5vh 0.5vw;
+                margin-left: 3vw;
+                margin-top: 3vh;
+                margin-bottom: 1.5vh;
+              }
+        }
+    }
     @include medias (desktop){
         grid-template-columns: 20% 80%;
         grid-template-areas:
-        "filters products";
+        "filters products"
+        "carrito carrito";
     }
 }

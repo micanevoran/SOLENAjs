@@ -42,8 +42,7 @@
     border: none;
     background: linear-gradient(to bottom, map-get($map:$palette, $key:'lightGreen'), map-get($map:$palette, $key:'aqua'));
     &:hover{
-        background: linear-gradient(to bottom, map-get($map:$palette, $key:'mainBg'), map-get($map:$palette, $key:'darkBlue'));
-        box-shadow: -7px 7px 7px -4px map-get($map:$palette, $key:'black');
+        background: linear-gradient(to bottom, map-get($map:$palette, $key:'green'), map-get($map:$palette, $key:'green'));
         cursor: pointer;
         transition: all .3s;
     }
@@ -55,9 +54,9 @@
     font-family: $mainFont;
     font-weight: $textRegular;
     .nav__logo{
-        height: 6vh;
+        height: 9vh;
         @include medias (tablet){
-            height: 8vh;
+            height: 10vh;
         }
     }
     .nav-item{
@@ -112,7 +111,7 @@ a{
         height: 23vh;
     }
     h1{
-        padding-top: 12vh;
+        padding-top: 13vh;
         @include font-size(1.5rem,1.9rem,1.9rem);
         padding-bottom: 1vh;
         color: map-get($map:$palette, $key:'white');

@@ -48,10 +48,11 @@
     <!--Fin Header-->
     <!--Inicio Contenido Principal-->
     <main class="structure__products mt-3">
+        <!--Inicio Filtros-->
         <aside id="ProdFilters" class="mx-auto my-3 ms-lg-2 ms-xl-4">
             <article>
                 <form class="d-flex">
-                    <input class="form-control me-2" type="search" placeholder="Buscar Producto" aria-label="Search">
+                    <input id="buscadorInput" class="form-control me-2" type="search" placeholder="Buscar Producto" aria-label="Search">
                     <button class="btn btn-outline-success products__search--btn my-auto" type="submit">
                         <img src="img/icons/search.png" alt="ícono de lupa para buscar">
                     </button>
@@ -59,140 +60,260 @@
             </article>
             <article class="mt-2">
                 <div class="dropdown">
-                    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">Línea de Productos</button>
+                    <button id="filtroLinea" class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">Línea de Productos</button>
                     <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                        <li><a class="dropdown-item" href="#">Energía Solar Fotovoltaica</a></li>
-                        <li><a class="dropdown-item" href="#">Energía Solar Térmica</a></li>
+                        <li><button id="linea-fotovoltaica" class="dropdown-item" type="button">Energía Solar Fotovoltaica</button></li>
+                        <li><button id="linea-termica" class="dropdown-item" type="button">Energía Solar Térmica</button></li>
+                        <li><button id="linea-todos" class="dropdown-item" type="button">Ver Todos</button></li>
                     </ul>
                 </div>
             </article>
             <article class="mt-2">
                 <div class="form-check">
-                    <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked>
-                    <label class="form-check-label" for="flexCheckChecked">Paneles Solares (2)</label>
+                    <input class="form-check-input" type="checkbox" value="" id="tipo-panel" checked>
+                    <label class="form-check-label" for="tipo-panel">Paneles Solares (2)</label>
                 </div>
                 <div class="form-check">
-                    <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked>
-                    <label class="form-check-label" for="flexCheckChecked">Termotanques Solares (3)</label>
+                    <input class="form-check-input" type="checkbox" value="" id="tipo-termot" checked>
+                    <label class="form-check-label" for="tipo-termot">Termotanques Solares (3)</label>
                 </div>
                 <div class="form-check">
-                    <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked>
-                    <label class="form-check-label" for="flexCheckChecked">Inversores (4)</label>
+                    <input class="form-check-input" type="checkbox" value="" id="tipo-inv" checked>
+                    <label class="form-check-label" for="tipo-inv">Inversores (4)</label>
                 </div>
                 <div class="form-check">
-                    <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked>
-                    <label class="form-check-label" for="flexCheckChecked">Baterías (2)</label>
+                    <input class="form-check-input" type="checkbox" value="" id="tipo-bat" checked>
+                    <label class="form-check-label" for="tipo-bat">Baterías (2)</label>
                 </div>
                 <div class="form-check">
-                    <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked>
-                    <label class="form-check-label" for="flexCheckChecked">Accesorios (9)</label>
+                    <input class="form-check-input" type="checkbox" value="" id="tipo-acc" checked>
+                    <label class="form-check-label" for="tipo-acc">Accesorios (9)</label>
                 </div>
             </article>
         </aside>
+        <!--Fin Filtros-->
+        <!--Inicio Lista de Productos-->
         <section id="ProdList">
-            <figure class="products__figure">
-                <img src="img/products/bateria-gel-ciclo-profundo.png" alt="Batería Gel Ciclo Profundo">
-                <figcaption>Batería Gel Ciclo Profundo</figcaption>
-                <p>$00.00</p>
+            <figure class="products__figure linea-fotovoltaica tipo-bat">
+                <img src="img/products/bateria-gel-ciclo-profundo.png" alt="Batería Gel Ciclo Profundo" class="prod-img">
+                <figcaption class="prod-nombre">Batería Gel Ciclo Profundo</figcaption>
+                <p class="prod-precio">U$S 300</p>
+                <button class="btn-carrito">
+                    Agregar al Carrito 
+                    <img src="img/icons/agregarCarrito.png" alt="Agregar al Carrito de compras" class="btn-img">
+                </button> 
             </figure>
-            <figure class="products__figure">
-                <img src="img/products/bateria-litio-48V.png" alt="Batería de Litio 48V">
-                <figcaption>Batería de Litio 48V</figcaption>
-                <p>$00.00</p>
+            <figure class="products__figure linea-fotovoltaica tipo-bat">
+                <img src="img/products/bateria-litio-48V.png" alt="Batería de Litio 48V" class="prod-img">
+                <figcaption class="prod-nombre">Batería de Litio 48V</figcaption>
+                <p class="prod-precio">U$S 3800</p>
+                <button class="btn-carrito">
+                    Agregar al Carrito 
+                    <img src="img/icons/agregarCarrito.png" alt="Agregar al Carrito de compras" class="btn-img">
+                </button> 
             </figure>
-            <figure class="products__figure">
-                <img src="img/products/cable-solar-4-6mm2.png" alt="Cable Solar 4-6 mm">
-                <figcaption>Cable Solar 4-6 mm</figcaption>
-                <p>$00.00</p>
+            <figure class="products__figure linea-fotovoltaica tipo-acc">
+                <img src="img/products/cable-solar-4-6mm2.png" alt="Cable Solar 4-6 mm" class="prod-img">
+                <figcaption class="prod-nombre">Cable Solar 4-6 mm</figcaption>
+                <p class="prod-precio">U$S 25</p>
+                <button class="btn-carrito">
+                    Agregar al Carrito 
+                    <img src="img/icons/agregarCarrito.png" alt="Agregar al Carrito de compras" class="btn-img">
+                </button> 
             </figure> 
-            <figure class="products__figure">
-                <img src="img/products/conectores-mc4-paralelo.png" alt="Conectores MC4 en paralelo">
-                <figcaption>Conectores MC4 en paralelo</figcaption>
-                <p>$00.00</p>
+            <figure class="products__figure linea-fotovoltaica tipo-acc">
+                <img src="img/products/conectores-mc4-paralelo.png" alt="Conectores MC4 en paralelo" class="prod-img">
+                <figcaption class="prod-nombre">Conectores MC4 en paralelo</figcaption>
+                <p class="prod-precio">U$S 15</p>
+                <button class="btn-carrito">
+                    Agregar al Carrito 
+                    <img src="img/icons/agregarCarrito.png" alt="Agregar al Carrito de compras" class="btn-img">
+                </button> 
             </figure>
-            <figure class="products__figure">
-                <img src="img/products/interruptor-termomagnetico-bipolar-DC.png" alt="Interruptor Termomagnético bipolar DC">
-                <figcaption>Interruptor Termomagnético bipolar DC</figcaption>
-                <p>$00.00</p>
+            <figure class="products__figure linea-fotovoltaica tipo-acc">
+                <img src="img/products/interruptor-termomagnetico-bipolar-DC.png" alt="Interruptor Termomagnético bipolar DC" class="prod-img">
+                <figcaption class="prod-nombre">Interruptor Termomagnético bipolar DC</figcaption>
+                <p class="prod-precio">U$S 30</p>
+                <button class="btn-carrito">
+                    Agregar al Carrito 
+                    <img src="img/icons/agregarCarrito.png" alt="Agregar al Carrito de compras" class="btn-img">
+                </button> 
             </figure>
-            <figure class="products__figure">
-                <img src="img/products/inversor-off-grid-3KW.png" alt="Inversor Off-Grid 3 KW">
-                <figcaption>Inversor Off-Grid 3 KW</figcaption>
-                <p>$00.00</p>
+            <figure class="products__figure linea-fotovoltaica tipo-inv">
+                <img src="img/products/inversor-off-grid-3KW.png" alt="Inversor Off-Grid 3 KW" class="prod-img">
+                <figcaption class="prod-nombre">Inversor Off-Grid 3 KW</figcaption>
+                <p class="prod-precio">U$S 770</p>
+                <button class="btn-carrito">
+                    Agregar al Carrito 
+                    <img src="img/icons/agregarCarrito.png" alt="Agregar al Carrito de compras" class="btn-img">
+                </button> 
             </figure>
-            <figure class="products__figure">
-                <img src="img/products/inversor-off-grid-5KW.png" alt="Inversor Off-Grid 5 KW">
-                <figcaption>Inversor Off-Grid 5 KW</figcaption>
-                <p>$00.00</p>
+            <figure class="products__figure linea-fotovoltaica tipo-inv">
+                <img src="img/products/inversor-off-grid-5KW.png" alt="Inversor Off-Grid 5 KW" class="prod-img">
+                <figcaption class="prod-nombre">Inversor Off-Grid 5 KW</figcaption>
+                <p class="prod-precio">U$S 1400</p>
+                <button class="btn-carrito">
+                    Agregar al Carrito 
+                    <img src="img/icons/agregarCarrito.png" alt="Agregar al Carrito de compras" class="btn-img">
+                </button> 
             </figure>
-            <figure class="products__figure">
-                <img src="img/products/inversor-on-grid-5KW.png" alt="Inversor On-Grid 5 KW">
-                <figcaption>Inversor On-Grid 5 KW</figcaption>
-                <p>$00.00</p>
+            <figure class="products__figure linea-fotovoltaica tipo-inv">
+                <img src="img/products/inversor-on-grid-5KW.png" alt="Inversor On-Grid 5 KW" class="prod-img">
+                <figcaption class="prod-nombre">Inversor On-Grid 5 KW</figcaption>
+                <p class="prod-precio">U$S 1250</p>
+                <button class="btn-carrito">
+                    Agregar al Carrito 
+                    <img src="img/icons/agregarCarrito.png" alt="Agregar al Carrito de compras" class="btn-img">
+                </button> 
             </figure>
-            <figure class="products__figure">
-                <img src="img/products/inversor-on-grid-50KW.png" alt="Inversor On-Grid 50 KW">
-                <figcaption>Inversor On-Grid 50 KW</figcaption>
-                <p>$00.00</p>
+            <figure class="products__figure linea-fotovoltaica tipo-inv">
+                <img src="img/products/inversor-on-grid-50KW.png" alt="Inversor On-Grid 50 KW" class="prod-img">
+                <figcaption class="prod-nombre">Inversor On-Grid 50 KW</figcaption>
+                <p class="prod-precio">U$S 5300</p>
+                <button class="btn-carrito">
+                    Agregar al Carrito 
+                    <img src="img/icons/agregarCarrito.png" alt="Agregar al Carrito de compras" class="btn-img">
+                </button> 
             </figure>
-            <figure class="products__figure">
-                <img src="img/products/juego-conectores-MC4.png" alt="Juego de Conectores MC4">
-                <figcaption>Juego de Conectores MC4</figcaption>
-                <p>$00.00</p>
+            <figure class="products__figure linea-fotovoltaica tipo-acc">
+                <img src="img/products/juego-conectores-MC4.png" alt="Juego de Conectores MC4" class="prod-img">
+                <figcaption class="prod-nombre">Juego de Conectores MC4</figcaption>
+                <p class="prod-precio">U$S 30</p>
+                <button class="btn-carrito">
+                    Agregar al Carrito 
+                    <img src="img/icons/agregarCarrito.png" alt="Agregar al Carrito de compras" class="btn-img">
+                </button> 
             </figure>
-            <figure class="products__figure">
-                <img src="img/products/panel-solar-fotovoltaico-monocristalino-450-600Wp.png" alt="Panel Solar Fotovoltaico Monocristalino 450-600WP">
-                <figcaption>Panel Solar Fotovoltaico Monocristalino 450-600WP</figcaption>
-                <p>$00.00</p>
+            <figure class="products__figure linea-fotovoltaica tipo-panel">
+                <img src="img/products/panel-solar-fotovoltaico-monocristalino-450-600Wp.png" alt="Panel Solar Fotovoltaico Monocristalino 450-600WP" class="prod-img">
+                <figcaption class="prod-nombre">Panel Solar Fotovoltaico Monocristalino 450-600WP</figcaption>
+                <p class="prod-precio">U$S 600</p>
+                <button class="btn-carrito">
+                    Agregar al Carrito 
+                    <img src="img/icons/agregarCarrito.png" alt="Agregar al Carrito de compras" class="btn-img">
+                </button> 
             </figure>
-            <figure class="products__figure">
-                <img src="img/products/panel-solar-fotovoltaico-policristalino-285-340Wp.png" alt="Panel Solar Fotovoltaico Policristalino 285-340WP">
-                <figcaption>Panel Solar Fotovoltaico Policristalino 285-340WP</figcaption>
-                <p>$00.00</p>
+            <figure class="products__figure linea-fotovoltaica tipo-panel">
+                <img src="img/products/panel-solar-fotovoltaico-policristalino-285-340Wp.png" alt="Panel Solar Fotovoltaico Policristalino 285-340WP" class="prod-img">
+                <figcaption class="prod-nombre">Panel Solar Fotovoltaico Policristalino 285-340WP</figcaption>
+                <p class="prod-precio">U$S 370</p>
+                <button class="btn-carrito">
+                    Agregar al Carrito 
+                    <img src="img/icons/agregarCarrito.png" alt="Agregar al Carrito de compras" class="btn-img">
+                </button> 
             </figure>
-            <figure class="products__figure">
-                <img src="img/products/protector-sobretensiones-DC.png" alt="Protector de Sobretensiones DC">
-                <figcaption>Protector de Sobretensiones DC</figcaption>
-                <p>$00.00</p>
+            <figure class="products__figure linea-fotovoltaica tipo-acc">
+                <img src="img/products/protector-sobretensiones-DC.png" alt="Protector de Sobretensiones DC" class="prod-img">
+                <figcaption class="prod-nombre">Protector de Sobretensiones DC</figcaption>
+                <p class="prod-precio">U$S 40</p>
+                <button class="btn-carrito">
+                    Agregar al Carrito 
+                    <img src="img/icons/agregarCarrito.png" alt="Agregar al Carrito de compras" class="btn-img">
+                </button> 
             </figure>
-            <figure class="products__figure">
-                <img src="img/products/protector-sobretensiones-trifasico-Ac.png" alt="Protector de Sobretensiones Trifásico AC">
-                <figcaption>Protector de Sobretensiones Trifásico AC</figcaption>
-                <p>$00.00</p>
+            <figure class="products__figure linea-fotovoltaica tipo-acc">
+                <img src="img/products/protector-sobretensiones-trifasico-Ac.png" alt="Protector de Sobretensiones Trifásico AC" class="prod-img">
+                <figcaption class="prod-nombre">Protector de Sobretensiones Trifásico AC</figcaption>
+                <p class="prod-precio">U$S 75</p>
+                <button class="btn-carrito">
+                    Agregar al Carrito 
+                    <img src="img/icons/agregarCarrito.png" alt="Agregar al Carrito de compras" class="btn-img">
+                </button> 
             </figure>
-            <figure class="products__figure">
-                <img src="img/products/regulador-carga-MPPT.png" alt="Regulador de Carga MPPT">
-                <figcaption>Regulador de Carga MPPT</figcaption>
-                <p>$00.00</p>
+            <figure class="products__figure linea-fotovoltaica tipo-acc">
+                <img src="img/products/regulador-carga-MPPT.png" alt="Regulador de Carga MPPT" class="prod-img">
+                <figcaption class="prod-nombre">Regulador de Carga MPPT</figcaption>
+                <p class="prod-precio">U$S 250</p>
+                <button class="btn-carrito">
+                    Agregar al Carrito 
+                    <img src="img/icons/agregarCarrito.png" alt="Agregar al Carrito de compras" class="btn-img">
+                </button> 
             </figure>
-            <figure class="products__figure">
-                <img src="img/products/regulador-carga-PWM.png" alt="Regulador de Cargfa PWM">
-                <figcaption>Regulador de Cargfa PWM</figcaption>
-                <p>$00.00</p>
+            <figure class="products__figure linea-fotovoltaica tipo-acc">
+                <img src="img/products/regulador-carga-PWM.png" alt="Regulador de Carga PWM" class="prod-img">
+                <figcaption class="prod-nombre">Regulador de Carga PWM</figcaption>
+                <p class="prod-precio">U$S 60</p>
+                <button class="btn-carrito">
+                    Agregar al Carrito 
+                    <img src="img/icons/agregarCarrito.png" alt="Agregar al Carrito de compras" class="btn-img">
+                </button> 
             </figure>
-            <figure class="products__figure">
-                <img src="img/products/termotanque-solar-200L.png" alt="Termotanque Solar 200L">
-                <figcaption>Termotanque Solar 200L</figcaption>
-                <p>$00.00</p>
+            <figure class="products__figure linea-termica tipo-termot">
+                <img src="img/products/termotanque-solar-200L.png" alt="Termotanque Solar 200L" class="prod-img">
+                <figcaption class="prod-nombre">Termotanque Solar 200L</figcaption>
+                <p class="prod-precio">U$S 880</p>
+                <button class="btn-carrito">
+                    Agregar al Carrito 
+                    <img src="img/icons/agregarCarrito.png" alt="Agregar al Carrito de compras" class="btn-img">
+                </button> 
             </figure>
-            <figure class="products__figure">
-                <img src="img/products/termotanque-solar-HeetPipe.png" alt="Termotanque Solar Heet Pipe">
-                <figcaption>Termotanque Solar Heet Pipe</figcaption>
-                <p>$00.00</p>
+            <figure class="products__figure linea-termica tipo-termot">
+                <img src="img/products/termotanque-solar-HeetPipe.png" alt="Termotanque Solar Heet Pipe" class="prod-img">
+                <figcaption class="prod-nombre">Termotanque Solar Heet Pipe</figcaption>
+                <p class="prod-precio">U$S 1550</p>
+                <button class="btn-carrito">
+                    Agregar al Carrito 
+                    <img src="img/icons/agregarCarrito.png" alt="Agregar al Carrito de compras" class="btn-img">
+                </button> 
             </figure>
-            <figure class="products__figure">
-                <img src="img/products/termotanque-solar-termosifonico-tanque-prellenado.png" alt="Termotanque Solar Termosifónico con tanque de prellenado">
-                <figcaption>Termotanque Solar Termosifónico con tanque de prellenado</figcaption>
-                <p>$00.00</p>
+            <figure class="products__figure linea-termica tipo-termot">
+                <img src="img/products/termotanque-solar-termosifonico-tanque-prellenado.png" alt="Termotanque Solar Termosifónico" class="prod-img">
+                <figcaption class="prod-nombre">Termotanque Solar Termosifónico</figcaption>
+                <p class="prod-precio">U$S 550</p>
+                <button class="btn-carrito">
+                    Agregar al Carrito 
+                    <img src="img/icons/agregarCarrito.png" alt="Agregar al Carrito de compras" class="btn-img">
+                </button> 
             </figure>
-            <figure class="products__figure">
-                <img src="img/products/válvula-termostática.png" alt="Válvula Termostática">
-                <figcaption>Válvula Termostática</figcaption>
-                <p>$00.00</p>
+            <figure class="products__figure linea-termica tipo-acc">
+                <img src="img/products/válvula-termostática.png" alt="Válvula Termostática" class="prod-img">
+                <figcaption class="prod-nombre">Válvula Termostática</figcaption>
+                <p class="prod-precio">U$S 70</p>
+                <button class="btn-carrito">
+                    Agregar al Carrito 
+                    <img src="img/icons/agregarCarrito.png" alt="Agregar al Carrito de compras" class="btn-img">
+                </button> 
             </figure>
             <figure class="emptySpace">
             </figure>
         </section>
+        <!--Fin Lista de Productos-->
+        <!--Inicio Carrito de Compras-->
+        <section id="carritoCompras">
+            <h3>Carrito de Compras</h3>
+            <div class="row">
+                <div class="col-6">
+                    <h4>Producto</h4>
+                </div>
+                <div class="col-2">
+                    <h4>Precio</h4>
+                </div>
+                <div class="col-4">
+                    <h4>Cantidad</h4>
+                </div>
+            </div>
+            <div class="carritoContainer">
+            </div>
+            <div class="carritoTotal">
+                <h5>Total</h5>
+                <h6 class="totalCarrito">U$S 0</h6>
+                <button button type="button" class="btn comprarBtn" data-bs-toggle="modal" data-bs-target="#exampleModal">Comprar</button>
+                <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <p class="modal-title" id="exampleModalLabel">Gracias por su compra</p>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn button" data-bs-dismiss="modal">Close</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!--Fin Carrito de Compras-->
     </main>
     <!--Fin Contenido Principal-->
     <!--Inicio Footer-->
@@ -215,5 +336,7 @@
     </footer>
     <!--Fin Footer-->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <script src="js/carrito.js"></script>
+    <script src="js/filtros.js"></script>
 </body>
 </html>
