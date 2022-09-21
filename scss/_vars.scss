@@ -1,0 +1,19 @@
+//colors
+$palette:(
+    'mainBg': rgba(136,180,164,0.9),
+    'darkGreen': rgb(52,103,39),
+    'aqua': rgb(82, 182, 154),
+    'lightGreen': rgb(118,200,147),
+    'blue': rgb(24,78,119),
+    'darkBlue': rgb(2,36,64),
+    'white': rgb(251, 253, 241),
+    'black': rgb(25, 25, 24),
+);
+
+//fonts
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200;0,300;0,400;0,500;1,300&family=Open+Sans:wght@300;400&display=swap');
+$titleFont: 'Open Sans', sans-serif;
+$mainFont: 'Nunito', sans-serif;
+$textBold: 700;
+$textRegular: 400;
+$textLight: 300;

@@ -1,0 +1,45 @@
+.structure__nosotros{
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    grid-template-areas: 
+    "nosimg"
+    "historia"
+    "servprod";
+    justify-items: center;
+    align-items: center;
+    h2{
+        @include font-size(1.3rem, 1.3rem, 1.5rem);
+    }
+    p{
+        @include font-size(1rem, 1rem, 1.1rem);
+        text-align: justify;
+    }
+    #NosImg{
+        grid-area: nosimg;
+        width: 70vw;
+        height: auto;
+        @include medias (desktop){
+            width: 90%;
+            height: auto;
+            margin-left: 5vw;
+        }
+    }
+    #Historia{
+        grid-area: historia;
+    }
+    #ServProd{
+        grid-area: servprod;
+    }
+    .nosotros__article{
+        width: 85%;
+        max-width: 700px;
+    }
+    @include medias (desktop){
+        grid-template-columns: 1fr 2fr;
+        grid-template-rows: auto;
+        grid-template-areas:
+        "nosimg historia"
+        "nosimg servprod";
+    }
+}

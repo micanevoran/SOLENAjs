@@ -1,0 +1,24 @@
+{
+  "name": "solena",
+  "version": "1.0.0",
+  "description": "Solena SAS es una empresa que brinda soluciones energéticas ambientales de manera integral, ofreciendo a sus clientes tanto servicios como productos para fometar la generación de energía a través de fuentes renovables.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "sass": "sass",
+    "sass:watch": "sass --watch scss/style.scss  css/style.css"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/micanevoran/SOLENA.git"
+  },
+  "author": "Ana Micaela Nevoran",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/micanevoran/SOLENA/issues"
+  },
+  "homepage": "https://github.com/micanevoran/SOLENA#readme",
+  "dependencies": {
+    "sass": "^1.54.0"
+  }
+}

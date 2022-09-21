@@ -1,0 +1,52 @@
+header{
+    h1{
+        @include font-size(1.3rem, 1.3rem, 1.7rem);
+    }
+    h2{
+        @include font-size(1.1rem, .1rem, 1.5rem);
+    }
+}
+section{
+    h3{
+        @include font-size(1rem, 1rem, 1.3rem);
+    }
+    .index__productlines--figure{
+        width: 35vw;
+        height: auto;
+        border: none;
+        @include display-flex (column, center, center);
+        img{
+            width: 60%;
+            height: auto;
+            max-width: 230px;
+            margin-bottom: 2vh;
+        }
+        figcaption{
+            font-family: $mainFont;
+            color:map-get($map:$palette, $key:'darkBlue');
+            @include font-size(0.8rem, 1.2rem, 1.3rem);
+        }
+        .productlines--btn{
+            @extend .button;
+            @include font-size(0.8rem, 1rem, 1.2rem);
+            padding: 0.4rem 0.1rem;
+            a{
+                color: map-get($map:$palette, $key:'white');
+            }
+        }
+    }
+    .clients__div{
+        width: 30%;
+        .clients__logos{
+            filter: grayscale(100%);
+            &:hover{
+                filter: grayscale(0%);
+                transition: filter 2s;
+                cursor: pointer;
+            }
+        }
+        @include medias (desktop){
+            width: 15%;
+        }
+    }
+}

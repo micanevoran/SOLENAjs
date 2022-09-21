@@ -1,0 +1,110 @@
+.structure__galery{
+    width: 100%;
+    padding: 0 3vw; 
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    row-gap: 2vh;
+    grid-template-areas: 
+    "photo1"
+    "photo2"
+    "photo3"
+    "photo4"
+    "photo5"
+    "photo6"
+    "photo7"
+    "photo8"
+    "photo9"
+    "photo10"
+    "photo11"
+    "photo12"
+    "photo13"
+    "photo14"
+    "photo15";
+    #Photo1{
+        grid-area: photo1;
+    }
+    #Photo2{
+        grid-area: photo2;
+    }
+    #Photo3{
+        grid-area: photo3;
+    }
+    #Photo4{
+        grid-area: photo4;
+    }
+    #Photo5{
+        grid-area: photo5;
+    }
+    #Photo6{
+        grid-area: photo6;
+    }
+    #Photo7{
+        grid-area: photo7;
+    }
+    #Photo8{
+        grid-area: photo8;
+    }
+    #Photo9{
+        grid-area: photo9;
+    }
+    #Photo10{
+        grid-area: photo10;
+    }
+    #Photo11{
+        grid-area: photo11;
+    }
+    #Photo12{
+        grid-area: photo12;
+    }
+    #Photo13{
+        grid-area: photo13;
+    }
+    #Photo14{
+        grid-area: photo14;
+    }
+    #Photo15{
+        grid-area: photo15;
+    }
+    .box__img{
+        width: 100%;
+        height: 100%;
+        img{
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+    @include medias (tablet){
+        grid-template-columns: repeat(2,1fr);
+        grid-template-rows: repeat(8,300px);
+        column-gap: 2vw;
+        row-gap: 3vh;
+        grid-template-areas: 
+        "photo1 photo2"
+        "photo3 photo4"
+        "photo5 photo6"
+        "photo7 photo8"
+        "photo9 photo10"
+        "photo11 photo12"
+        "photo13 photo14"
+        "photo15 none";
+        justify-items: center;
+        align-items: center;
+    }
+    @include medias (desktop){
+        grid-template-columns: repeat(3,1fr);
+        grid-template-rows: repeat(9,400px);
+        column-gap: 1.5vw;
+        grid-template-areas: 
+        "photo1 photo1 photo2"
+        "photo1 photo1 photo3"
+        "photo4 photo4 photo4"
+        "photo5 photo5 photo5"
+        "photo6 photo6 photo7"
+        "photo8 photo9 photo9"
+        "photo10 photo10 photo11"
+        "photo12 photo12 photo12"
+        "photo13 photo14 photo15";
+    }    
+}

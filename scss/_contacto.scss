@@ -1,0 +1,71 @@
+.structure__contacto{
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    grid-template-areas: 
+    "form"
+    "datos";
+    h3{
+        font-size: 1.3rem;
+    }
+    #Form{
+        grid-area: form;
+        form{
+            width: 100%;
+            font-family: $mainFont;
+            font-size: 1rem;
+            font-weight: $textLight;
+            @include display-flex(column, stretch, stretch);
+            label{
+                font-size: 1.1rem;
+                color:map-get($map:$palette, $key:'darkBlue');  
+            }
+            legend{
+                font-size: 1.3rem;
+                color:map-get($map:$palette, $key:'darkBlue');
+            }
+            button{
+                @extend .button;
+                align-self: center;
+                a{
+                    color:map-get($map:$palette, $key:'white');
+                }
+            }
+            @include medias (tablet){
+                max-width: 600px;
+                margin: 0 auto;
+            }   
+        }
+    }    
+    #Datos{
+        grid-area: datos;
+        @include display-flex(column, stretch, center);
+        iframe{
+            width: 80vw;
+            height: 300px;
+            border: none;
+            @include medias (tablet){
+                width: 450px;
+            }
+        }
+        div{
+            @include display-flex(column, center, center);
+            img{
+                width: 5vw;
+                max-width: 30px;
+                margin-bottom: 0.5vh;
+            }
+            p{
+                font-size: 1.2rem;
+            }
+            @include medias (tablet){
+                flex-direction: row;
+            }   
+        }
+    }
+    @include medias (desktop){
+        grid-template-columns: repeat(2,1fr);
+        grid-template-areas: 
+        "form datos";
+    }   
+}
