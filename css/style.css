@@ -37,7 +37,7 @@
 }
 @media (min-width: 1024px) {
   #nav .nav-item {
-    font-size: 1rem;
+    font-size: 1.2rem;
   }
 }
 #nav .nav-item:hover {
@@ -541,6 +541,7 @@ section .clients__div .clients__logos:hover {
   border-bottom: solid rgb(2, 36, 64) 0.07em;
 }
 .structure__products #carritoCompras h4 {
+  text-align: start;
   font-size: 0.9rem;
 }
 @media (min-width: 768px) {
@@ -550,7 +551,6 @@ section .clients__div .clients__logos:hover {
 }
 .structure__products #carritoCompras .prodAgregado {
   border-bottom: 0.05em solid rgb(82, 182, 154);
-  font-size: 1rem;
 }
 .structure__products #carritoCompras .prodAgregado .prodAgregadoImgNombre {
   display: flex;
@@ -586,25 +586,26 @@ section .clients__div .clients__logos:hover {
 .structure__products #carritoCompras .prodAgregado .prodAgregadoPrecio {
   display: flex;
   flex-direction: row;
-  justify-content: center;
+  justify-content: start;
   align-items: center;
-  font-size: 0.8rem;
   height: 100%;
   padding: 0.7vh 0;
 }
+.structure__products #carritoCompras .prodAgregado .prodAgregadoPrecio p {
+  font-size: 0.8rem;
+}
 @media (min-width: 768px) {
-  .structure__products #carritoCompras .prodAgregado {
+  .structure__products #carritoCompras .prodAgregado .prodAgregadoPrecio p {
     font-size: 1.2rem;
   }
 }
 .structure__products #carritoCompras .prodAgregado .prodAgregadoCantidad {
   display: flex;
   flex-direction: row;
-  justify-content: center;
+  justify-content: start;
   align-items: center;
-  justify-content: center;
   height: 100%;
-  padding: 1vh 0;
+  padding: 1vh 2vw;
 }
 .structure__products #carritoCompras .prodAgregado .prodAgregadoCantidad .prodAgregadoCantidadInput {
   width: 10vw;
@@ -643,9 +644,16 @@ section .clients__div .clients__logos:hover {
 .structure__products #carritoCompras .carritoTotal .comprarBtn {
   font-size: 1.2em;
   padding: 0.5vh 0.5vw;
-  margin-left: 3vw;
-  margin-top: 3vh;
-  margin-bottom: 1.5vh;
+  margin: 3vh 0 1.5vh 3vw;
+}
+.structure__products #carritoCompras .carritoTotal .vaciarCarritoBtn {
+  opacity: 0.6;
+  text-decoration: underline;
+  color: rgb(25, 25, 24);
+  font-size: 1rem;
+  padding: 0.5vh 0.5vw;
+  margin: 3vh 0 1.5vh 3vw;
+  align-self: flex-end;
 }
 @media (min-width: 1024px) {
   .structure__products {

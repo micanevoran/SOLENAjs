@@ -108,6 +108,7 @@
             border-bottom: solid map-get($map:$palette, $key:'darkBlue') 0.07em;
         }
         h4{
+            text-align: start;
             font-size: 0.9rem;
             @include medias (tablet){
                 font-size: 1.2rem;
@@ -115,7 +116,6 @@
         }
         .prodAgregado{
             border-bottom: 0.05em solid rgb(82, 182, 154);
-            font-size: 1rem;
             .prodAgregadoImgNombre{
                 @include display-flex(column, center, start);
                 p{
@@ -139,19 +139,20 @@
                 
             }
             .prodAgregadoPrecio{
-                @include display-flex(row, center, center);
-                font-size: 0.8rem;
+                @include display-flex(row, start, center);
                 height: 100%;
                 padding: 0.7vh 0;
+                p{
+                    font-size: 0.8rem;
+                    @include medias(tablet){
+                        font-size: 1.2rem; 
+                    }
                 }
-                @include medias(tablet){
-                    font-size: 1.2rem; 
-                }
+            }
             .prodAgregadoCantidad{
-                @include display-flex(row, center, center);
-                justify-content: center;
+                @include display-flex(row, start, center);
                 height: 100%;
-                padding: 1vh 0;
+                padding: 1vh 2vw;
                 .prodAgregadoCantidadInput{
                     width: 10vw;
                     margin-right: 0.5vw;
@@ -186,10 +187,17 @@
                 @extend .button;
                 font-size: 1.2em;
                 padding: 0.5vh 0.5vw;
-                margin-left: 3vw;
-                margin-top: 3vh;
-                margin-bottom: 1.5vh;
-              }
+                margin: 3vh 0 1.5vh 3vw;
+            }
+            .vaciarCarritoBtn{
+                opacity: 0.6;
+                text-decoration: underline;
+                color: map-get($map:$palette, $key:'black');
+                font-size: 1rem;
+                padding: 0.5vh 0.5vw;
+                margin: 3vh 0 1.5vh 3vw;
+                align-self: flex-end;
+            }
         }
     }
     @include medias (desktop){

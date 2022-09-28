@@ -4,7 +4,7 @@
 const prodContainer = document.querySelector("#ProdList")
 const TODOS = document.querySelectorAll(".products__figure")
 
-//Creo una clase constructora para mis productos//
+//Creo una clase constructora para mis productos
 class crearProducto{
     constructor(img, nombre, nombreLowerCase, precio, linea, tipo){
         this.img = img
@@ -170,11 +170,11 @@ checkInputTipoBat.addEventListener("change", () => filtrarTipoBat(event))
 checkInputTipoAcc.addEventListener("change", () => filtrarTipoAcc(event))
 
 //Armo un array de productos para cada tipo de producto
-const TipoPanelArray = document.querySelectorAll(".tipo-panel")
-const TipoTermotArray = document.querySelectorAll(".tipo-termot")
-const TipoInvArray = document.querySelectorAll(".tipo-inv")
-const TipoBatArray = document.querySelectorAll(".tipo-bat")
-const TipoAccArray = document.querySelectorAll(".tipo-acc")
+let TipoPanelArray = document.querySelectorAll(".tipo-panel")
+let TipoTermotArray = document.querySelectorAll(".tipo-termot")
+let TipoInvArray = document.querySelectorAll(".tipo-inv")
+let TipoBatArray = document.querySelectorAll(".tipo-bat")
+let TipoAccArray = document.querySelectorAll(".tipo-acc")
 
 
 // //Defino la función de respuesta al filtro por tipo de producto

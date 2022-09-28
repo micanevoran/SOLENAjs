@@ -60,7 +60,7 @@
         }
     }
     .nav-item{
-        @include font-size(0.8rem,1rem,1rem);
+        @include font-size(0.8rem,1rem,1.2rem);
         &:hover{
             animation-name: animateNavLinks;
             animation-duration: 0.5s;
