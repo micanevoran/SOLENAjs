@@ -207,3 +207,24 @@
         "carrito carrito";
     }
 }
+
+.toastStyle{
+    background: map-get($map: $palette, $key:'darkBlue');
+    border-radius: 15px;
+    padding: 20px;
+    font-family: $mainFont;
+    font-size: 1rem;
+}
+
+.swalText{
+    font-family: $mainFont;
+    font-size: 2rem;
+}
+.swalButton{
+    @extend .button;
+    font-size: 1.5rem;
+}
+.swalBackdrop{
+    background: rgba(255,255,255,.8);
+    backdrop-filter: blur(2px);
+}

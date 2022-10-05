@@ -48,6 +48,13 @@ function agregarCarritoClick(e){
         if (productosCarrito[i].innerText === nombre){
             let prodCantidad = productosCarrito[i].parentElement.parentElement.parentElement.querySelector(".prodAgregadoCantidadInput")
             prodCantidad.value ++
+            Toastify({
+                text: `Se gregó ${productosCarrito[i].innerText} al carrito`,
+                duration: 3000,
+                gravity: "bottom",
+                position: "right",
+                className: "toastStyle"
+            }).showToast()
             actualizarCantidadLocalStorage(id, prodCantidad.value)
             actualizarTotalCarrito()
             return
@@ -60,6 +67,13 @@ function agregarCarritoClick(e){
 //Defino la función que muestra productos en el carrito
 //Con un condicional indico que si el producto ya se encuentra en el carrito, sólo aumente la cantidad y no se vuelva a agregar
 function mostrarProductoEnCarrito(id, img, nombre, precio, cdad){
+    Toastify({
+        text: `Se gregó ${nombre} al carrito`,
+        duration: 3000,
+        gravity: "bottom",
+        position: "right",
+        className: "toastStyle"
+    }).showToast()
     carritoRow = document.createElement("div")
     carritoContent = `
         <div class= "row prodAgregado container-fluid">
@@ -131,6 +145,19 @@ function comprarClick(){
     carritoContainer.innerHTML = ""
     localStorage.clear()
     actualizarTotalCarrito()
+    Swal.fire({
+        title: "Gracias por su compra",
+        icon: "success",
+        confirmButtonText: "Cerrar",
+        buttonsStyling: false,
+        backdrop: false,
+        customClass: {
+            title: "swalText",
+            confirmButtonText: "swalText",
+            confirmButton: "swalButton",
+            backdrop: "swalBackdrop"
+        }
+    })
 }
 
 //Defino la función de respuesta al hacer click en el botón de "Limpiar Carrito" 
@@ -162,7 +189,7 @@ function visualizarProductosLocalStorage(){
     productosLS.forEach(prod=>mostrarProductoEnCarrito(prod.id, prod.img, prod.nombre, prod.precio, prod.cantidad))
 }
 
-//Defino la función para eliminar productos del Local Storage ____________________________________REVISAR_____________________________________________
+//Defino la función para eliminar productos del Local Storage 
 function eliminarProductosLocalStorage(productoID){
     let productosLS = obtenerProductosLocalStorage()
     productosLS.forEach(function(prod, index){prod.id === productoID && productosLS.splice(index,1)})
@@ -170,7 +197,7 @@ function eliminarProductosLocalStorage(productoID){
     return productosLS
 }
 
-//Defino la función de actualizar cantidades de productos en el local Storage ____________________________________REVISAR_____________________________________________
+//Defino la función de actualizar cantidades de productos en el local Storage
 function actualizarCantidadLocalStorage(productoID, cantidadActual){
     let productosLS = obtenerProductosLocalStorage()
     productosLS.forEach(prod=>{

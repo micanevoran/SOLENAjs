@@ -1,12 +1,12 @@
 @import url("https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200;0,300;0,400;0,500;1,300&family=Open+Sans:wght@300;400&display=swap");
-.button, .structure__contacto #Form form button, .structure__products #carritoCompras .carritoTotal .comprarBtn, .structure__products #ProdList .products__figure .btn-carrito, .structure__products #ProdFilters .products__search--btn, section .index__productlines--figure .productlines--btn, #error .error__button {
+.button, .structure__contacto #Form form button, .swalButton, .structure__products #carritoCompras .carritoTotal .comprarBtn, .structure__products #ProdList .products__figure .btn-carrito, .structure__products #ProdFilters .products__search--btn, section .index__productlines--figure .productlines--btn, #error .error__button {
   font-family: "Nunito", sans-serif;
   color: rgb(251, 253, 241);
   border-radius: 5px;
   border: none;
   background: linear-gradient(to bottom, rgb(118, 200, 147), rgb(82, 182, 154));
 }
-.button:hover, .structure__contacto #Form form button:hover, .structure__products #carritoCompras .carritoTotal .comprarBtn:hover, .structure__products #ProdList .products__figure .btn-carrito:hover, .structure__products #ProdFilters .products__search--btn:hover, section .index__productlines--figure .productlines--btn:hover, #error .error__button:hover {
+.button:hover, .structure__contacto #Form form button:hover, .swalButton:hover, .structure__products #carritoCompras .carritoTotal .comprarBtn:hover, .structure__products #ProdList .products__figure .btn-carrito:hover, .structure__products #ProdFilters .products__search--btn:hover, section .index__productlines--figure .productlines--btn:hover, #error .error__button:hover {
   background: linear-gradient(to bottom, rgb(45, 138, 77), rgb(45, 138, 77));
   cursor: pointer;
   transition: all 0.3s;
@@ -660,6 +660,28 @@ section .clients__div .clients__logos:hover {
     grid-template-columns: 20% 80%;
     grid-template-areas: "filters products" "carrito carrito";
   }
+}
+
+.toastStyle {
+  background: rgb(2, 36, 64);
+  border-radius: 15px;
+  padding: 20px;
+  font-family: "Nunito", sans-serif;
+  font-size: 1rem;
+}
+
+.swalText {
+  font-family: "Nunito", sans-serif;
+  font-size: 2rem;
+}
+
+.swalButton {
+  font-size: 1.5rem;
+}
+
+.swalBackdrop {
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(2px);
 }
 
 .structure__galery {
