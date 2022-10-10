@@ -32,3 +32,9 @@ Optimicé el código utilizando los operadores avanzados vistos en clase, por ej
 - Operador Lógico AND (&&) en la función eliminarProductosLocalStorage() del archivo funciones.js (línea 168)
 
 También organicé mi código definiendo una función para inicializar los elementos, otra para inicializar los eventos y luego llamando a la ejecución en una función main()
+
+## Entrega desafío librerías
+
+Agregué notificaciones customizadas cuando se agrega un producto al carrito con Toastify
+
+Agregué un alert customizado cuando se presiona el botón "Comprar" con Sweet Alert
