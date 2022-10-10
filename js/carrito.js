@@ -217,7 +217,6 @@ function main(){
     }catch(error){
         console.log(error)
         }
-    console.log(listaProductos)
     inicializarElementos()
     inicializarEventos()    
     visualizarProductosLocalStorage()
