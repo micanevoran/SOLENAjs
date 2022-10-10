@@ -1,5 +1,11 @@
 //FILTROS
 
+//Defino las variables
+let prodContainer 
+let TODOSfigures
+let buscadorBtn
+let prodBuscadoInput
+
 //Me traigo del HTML el contenedor de todos los productos y todos los productos que contiene, todas las figures de productos y todos los nombres de productos (en minúsculas)
 prodContainer = document.querySelector("#ProdList")
 TODOSfigures = prodContainer.querySelectorAll(".products__figure")

@@ -1,17 +1,18 @@
-//Creo un nuevo objeto para cada producto de mi lista y los agrego al array listaProductos
-function agregarProductosLista(){
-    const productosHTML = document.querySelectorAll(".products__figure")
-    productosHTML.forEach(prod=>{
-        const prodID = Number(prod.querySelector(".btn-carrito").getAttribute("data-id"))
-        const prodImg = prod.querySelector(".prod-img").src
-        const prodNombre = prod.querySelector(".prod-nombre").textContent
-        const prodNombreLowerCase = prodNombre.toLowerCase()
-        const prodPrecio = Number(prod.querySelector(".prod-precio").textContent.replace("U$S ", ""))
-        const prodLinea = prod.classList[1]
-        const prodTipo = prod.classList[2]
-        const productoCreado = new productoEnLista(prodID, prodImg, prodNombre, prodNombreLowerCase, prodPrecio, prodLinea, prodTipo)
-        listaProductos.push(productoCreado)
-    })
+//Defino las variables
+let agregarProdAlCarritoBtn
+let carritoContainer
+let carritoRow
+let carritoContent
+let cantidadAgregada
+let comprarBtn
+let limpiarCarritoBtn
+const listaProductos = []
+
+//Defino una función asíncrona que tome la información de los productos de mockAPI y los agregue a mi array listaProductos
+const pedirDatosProd = async()=>{
+    const resp = await fetch("https://6341d13816ffb7e275d87143.mockapi.io/solenajs/productos")
+    const data = await resp.json()
+    data.forEach(el=>listaProductos.push(el))
 }
 
 //Me traigo del HTML todos los elementos que desencadenarán eventos, definiendo una función para inicializarlos
@@ -33,7 +34,7 @@ function inicializarEventos(){
 
 //Defino una función para encontrar un producto en mi lista de productos
 function buscarProducto(prodBuscado){
-    const prodEncontrado = listaProductos.find(el=>el.nombre == prodBuscado)
+    const prodEncontrado = listaProductos.find(el=>el.nombre === prodBuscado)
     return prodEncontrado
 }
 
@@ -211,9 +212,14 @@ function actualizarCantidadLocalStorage(productoID, cantidadActual){
 }
 
 function main(){
-    agregarProductosLista()
+    try{
+        pedirDatosProd()
+    }catch(error){
+        console.log(error)
+        }
+    console.log(listaProductos)
     inicializarElementos()
-    inicializarEventos()
+    inicializarEventos()    
     visualizarProductosLocalStorage()
 }
 
