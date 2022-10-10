@@ -38,3 +38,9 @@ También organicé mi código definiendo una función para inicializar los eleme
 Agregué notificaciones customizadas cuando se agrega un producto al carrito con Toastify
 
 Agregué un alert customizado cuando se presiona el botón "Comprar" con Sweet Alert
+
+
+
+## Entrega desafío de incorporación de Fetch
+
+Agregué mis productos a la base de datos de MockAPI generando una API ficticia para consumir con la información necesaria de mis productos. Eliminé la clase constructora de productos y la función para crear productos y agregarlos al array de productos. En su lugar, agregué una función asíncrona con fetch, que consulta la información almacenada en la API y la agrega a mi array de productos.
