@@ -13,7 +13,7 @@ Para mejorar mi proyecto desarrollado en el Curso de Desarrollo Web, decidí hac
 
 Inicialmente definí globalmente las variables que utilizaré a lo largo del código, entre las cuales se encuentra un array vacío donde agregaré mi lista de productos disponibles. 
 
-Luego, con una función asíncrona, solicito a la API **mockapi** que tome la información de los productos y los agregue a mi array de productos. 
+Luego, con una función asíncrona, solicito a la API **MockAPI** que tome la información de los productos y los agregue a mi array de productos. 
 (Previamente agregué mis productos a la base de datos de MockAPI generando una API ficticia para consumir con la información necesaria de mis productos.). 
 
 Cada producto de la tienda tiene un botón "Agregar al Carrito". El evento onclick para esto botones, desencadena el agregado del producto al carrito de compras ubicado al final de la página. Cuando un usuario agrega un producto, se dispara una notificación creada con **Toastify**
@@ -22,7 +22,7 @@ Si el usuario quiere agregar al carrito un producto que ya ha sido previamente a
 
 Cuando un producto es agregado al carrito, se visualizan los datos de producto agregado (imagen, nombre, precio) y además hay un input de cantidad que por defecto es 1 pero puede ser modificada por el usuario. También al final de cada línea hay un botón para eliminar el producto del carrito. 
 
-Cuando se produce cualquier modificación en el carrito (agregado/eliminación de un producto o modificación de la cantidad) esta información se almacena en el Local Storage para que el carrito armado persista a cierres del navegador. 
+Cuando se produce cualquier modificación en el carrito (agregado/eliminación de un producto o modificación de la cantidad) esta información se almacena en el **Local Storage** para que el carrito armado persista a cierres del navegador. 
 
 Al final del carrito, se visualiza el valor total de la compra, que se actualiza conforme se agregan, eliminan o se modifica la cantidad de productos. Este valor total, también se almacena en el Local Storage.
 
