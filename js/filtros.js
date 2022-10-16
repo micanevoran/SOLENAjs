@@ -17,7 +17,6 @@ TODOSfigures = prodContainer.querySelectorAll(".products__figure")
 buscadorBtn = document.querySelector(".products__search--btn")
 prodBuscadoInput = document.querySelector("#buscadorInput")
 
-console.log(prodBuscadoInput.value)
 //Agrego un event listener al hacer click en el botón de buscar productos
 buscadorBtn.addEventListener("click", buscarProd)
 
